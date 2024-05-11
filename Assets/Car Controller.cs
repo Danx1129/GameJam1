@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    private float horizontalInput, verticalInput;
+    private float horizontalInput, verticalInput, flip;
+    
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
 
@@ -19,6 +20,9 @@ public class CarController : MonoBehaviour
     // Wheels
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
+
+    // [SerializeField] private Transform p; 
+
 
     private void FixedUpdate() {
         GetInput();
@@ -36,6 +40,14 @@ public class CarController : MonoBehaviour
 
         // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);
+        
+        // Reset Position
+        if(Input.GetKey("r"))
+        {
+            //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
+            transform.rotation = Quaternion.identity;
+        }
+        
     }
 
     private void HandleMotor() {
