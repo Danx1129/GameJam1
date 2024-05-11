@@ -16,4 +16,9 @@ public class ArrowScript : MonoBehaviour
     {
         transform.LookAt(targetObject.transform);
     }
+
+    public void getNewTarget(GameObject newTarget)
+    {
+
+    }
 }
