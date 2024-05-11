@@ -24,10 +24,10 @@ public class TimerControl : MonoBehaviour
     {
         currT -= 1 * Time.deltaTime;
         // countdownT.color = Color.green;
-        countdownT.text = currT.ToString("Time 0");
-        if (currT <= 0)
-        {
-            currT = 0;
-        }
+        countdownT.text = currT.ToString("0");
+        // if (currT <= 0)
+        // {
+        //     currT = 0;
+        // }
     }
 }
